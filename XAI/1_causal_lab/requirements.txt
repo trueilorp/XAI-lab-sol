@@ -1,0 +1,15 @@
+# ===== Causal AI Lab Stable Environment =====
+numpy==1.23.5
+pandas==1.5.3
+scipy==1.10.1
+matplotlib==3.5.1
+scikit-learn==1.2.2
+tigramite==5.2.0.0
+tqdm==4.65.0
+sktime==0.16.1
+jupyterlab==4.0.5
+seaborn==0.12.2
+tensorflow==2.13.0
+networkx==2.8.4
+ecs-logging==1.1.0
+owlready2==0.43
