@@ -34,7 +34,6 @@ PC_ALPHA = 0.05
 TRAIN_FRAC = 0.7
 TARGET = "cooling_demand"
 MAX_TAU = 5
-T = 500
 
 TCN_FILTERS = 32
 TCN_KERNEL = 3
@@ -77,12 +76,12 @@ def variance_filter(df, threshold=1e-5):
 def compute_tau_max(series, fallback=MAX_TAU):
 	"""Estimate a reasonable tau_max from dominant FFT frequency."""
 	n = len(series)
-	x = series - np.mean(series)
-	fft = np.fft.fft(x)
-	freqs = np.fft.fftfreq(n)
+	x = series - np.mean(series) # center data by sbtract the mean
+	fft = np.fft.fft(x) # frequenza dominante
+	freqs = np.fft.fftfreq(n) # calcolo frequenze associate
 	fft[0] = 0
-	dom_idx = np.argmax(np.abs(fft))
-	dom_freq = abs(freqs[dom_idx])
+	dom_idx = np.argmax(np.abs(fft)) # frequenza dominante
+	dom_freq = abs(freqs[dom_idx]) 
 	if dom_freq == 0 or np.isclose(dom_freq, 0.0):
 		return fallback
 	tau = int(round(1.0 / dom_freq))
@@ -98,6 +97,7 @@ def fit_causal_model(df, target_col=TARGET, tau_max=MAX_TAU):
 	# y = df.iloc[:, -1]
 	# model = LinearRegression()
 	# model.fit(X, y) 
+	T = df.shape[0]
 	
 	df_tg = pp.DataFrame(df.values, var_names=df.columns.tolist())
 	print("\nDataFrame: ", df_tg)
@@ -106,29 +106,32 @@ def fit_causal_model(df, target_col=TARGET, tau_max=MAX_TAU):
 	print("Target idx: ", target_idx)
 	
 	model = Prediction(dataframe=df_tg,
-        cond_ind_test=ParCorr(),
-        prediction_model = LinearRegression(),
-    data_transform=StandardScaler(),
-    train_indices= range(int(0.8*T)),
-    test_indices= range(int(0.9*T), T),
-    verbosity=1
-    )
+		cond_ind_test=ParCorr(),
+		prediction_model = LinearRegression(),
+		data_transform=StandardScaler(),
+   		train_indices= range(int(0.8*T)),
+		test_indices= range(int(0.9*T), T),
+		verbosity=1
+		)
+	
 	
 	print("Model created")	
 	
 	predictors = model.get_predictors(
-                  selected_targets=[target_idx],
-                  steps_ahead=1,
-                  tau_max=tau_max,
-                  pc_alpha=None
-                  )
+				  selected_targets=[target_idx],
+				  steps_ahead=1,
+				  tau_max=tau_max,
+				  pc_alpha=PC_ALPHA
+				  )
 	print("Predictors created")
 	
 	print("Fitting model...")
 	model.fit(target_predictors=predictors, 
-                selected_targets=[target_idx],
-                    tau_max=tau_max)
+				selected_targets=[target_idx],
+					tau_max=tau_max)
 	print("Model fitted")
+	
+	# --------------------------
 	
 	# Extract aligned true values
 	print("Getting predictions...")
@@ -301,9 +304,9 @@ def plot_feature_importance(causal_feat_names, causal_importance, tcn_feat_names
 # -------------------------- MAIN --------------------------
 def main():
 	df_b1 = load_citylearn(1)
-	df_b1 = variance_filter(df_b1)
+	df_b1 = variance_filter(df_b1) # preprocess dataset
 	# print(df_b1.columns)
-	print(df_b1.dtypes)
+	print(df_b1.head(5))
 	tau_max = compute_tau_max(df_b1[TARGET].values)
 	causal_model, predictors, pred_causal, true_causal, nmae_causal, nstd_causal = fit_causal_model(df_b1, TARGET, tau_max)
 
@@ -334,25 +337,25 @@ if __name__ == "__main__":
 
 '''
 ['hour', 'day_type', 'indoor_dry_bulb_temperature',
-       'average_unmet_cooling_setpoint_difference', 'indoor_relative_humidity',
-       'non_shiftable_load', 'dhw_demand', 'cooling_demand',
-       'solar_generation', 'occupant_count',
-       'indoor_dry_bulb_temperature_set_point', 'carbon_intensity',
-       'electricity_pricing', 'electricity_pricing_predicted_6h',
-       'electricity_pricing_predicted_12h',
-       'electricity_pricing_predicted_24h', 'outdoor_dry_bulb_temperature',
-       'outdoor_relative_humidity', 'diffuse_solar_irradiance',
-       'direct_solar_irradiance', 'outdoor_dry_bulb_temperature_predicted_6h',
-       'outdoor_dry_bulb_temperature_predicted_12h',
-       'outdoor_dry_bulb_temperature_predicted_24h',
-       'outdoor_relative_humidity_predicted_6h',
-       'outdoor_relative_humidity_predicted_12h',
-       'outdoor_relative_humidity_predicted_24h',
-       'diffuse_solar_irradiance_predicted_6h',
-       'diffuse_solar_irradiance_predicted_12h',
-       'diffuse_solar_irradiance_predicted_24h',
-       'direct_solar_irradiance_predicted_6h',
-       'direct_solar_irradiance_predicted_12h',
-       'direct_solar_irradiance_predicted_24h'],
-      dtype='object')
+	   'average_unmet_cooling_setpoint_difference', 'indoor_relative_humidity',
+	   'non_shiftable_load', 'dhw_demand', 'cooling_demand',
+	   'solar_generation', 'occupant_count',
+	   'indoor_dry_bulb_temperature_set_point', 'carbon_intensity',
+	   'electricity_pricing', 'electricity_pricing_predicted_6h',
+	   'electricity_pricing_predicted_12h',
+	   'electricity_pricing_predicted_24h', 'outdoor_dry_bulb_temperature',
+	   'outdoor_relative_humidity', 'diffuse_solar_irradiance',
+	   'direct_solar_irradiance', 'outdoor_dry_bulb_temperature_predicted_6h',
+	   'outdoor_dry_bulb_temperature_predicted_12h',
+	   'outdoor_dry_bulb_temperature_predicted_24h',
+	   'outdoor_relative_humidity_predicted_6h',
+	   'outdoor_relative_humidity_predicted_12h',
+	   'outdoor_relative_humidity_predicted_24h',
+	   'diffuse_solar_irradiance_predicted_6h',
+	   'diffuse_solar_irradiance_predicted_12h',
+	   'diffuse_solar_irradiance_predicted_24h',
+	   'direct_solar_irradiance_predicted_6h',
+	   'direct_solar_irradiance_predicted_12h',
+	   'direct_solar_irradiance_predicted_24h'],
+	  dtype='object')
 '''
