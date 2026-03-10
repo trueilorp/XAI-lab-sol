@@ -1,3 +1,16 @@
 XAI/.vscode
 XAI/1_causal_lab/.vscode
 XAI/1_causal_lab/causalai
+
+.venv
+models
+*venv
+XAI/stl_rl/stl_rl
+
+__pycache__
+
+XAI/3_2_activation_rate_lab/src/controllers
+XAI/3_2_activation_rate_lab/src/envs
+XAI/3_2_activation_rate_lab/src/learners
+XAI/3_2_activation_rate_lab/src/config
+XAI/3_2_activation_rate_lab/results

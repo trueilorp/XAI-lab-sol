@@ -1,0 +1,61 @@
+[project]
+name = "rwareXAI"
+author = "Edoardo Zorzi"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "absl-py>=2.3.1",
+    "attrs>=25.4.0",
+    "click>=8.3.0",
+    "gymnasium>=1.2.2",
+    "idna>=3.11",
+    "imageio>=2.37.2",
+    "matplotlib>=3.10.7",
+    "matrixgames",
+    "mpyq>=0.2.5",
+    "numpy>=1.26.4",
+    "opencv-python>=4.11.0.86",
+    "pbr>=7.0.3",
+    "pettingzoo",
+    "pillow>=12.0.0",
+    "pluggy>=1.6.0",
+    "portpicker>=1.6.0",
+    "probscale>=0.2.5",
+    "protobuf>=6.33.0",
+    "py>=1.11.0",
+    "pygame>=2.6.1",
+    "pyparsing>=3.2.5",
+    "pytest>=9.0.1",
+    "python-dateutil>=2.9.0.post0",
+    "pyyaml==5.3.1",
+    "requests>=2.32.5",
+    "rware",
+    "sacred>=0.8.7",
+    "scipy>=1.15.3",
+    "seaborn>=0.13.2",
+    "setuptools<81",
+    "six>=1.17.0",
+    "sk-video>=1.1.10",
+    "smaclite",
+    "snakeviz>=2.2.2",
+    "tensorboard>=2.20.0",
+    "tensorboard-logger>=0.1.0",
+    "torch>=2.9.1",
+    "torchvision>=0.24.1",
+    "tornado>=6.5.2",
+    "tyro>=0.9.35",
+    "urllib3>=2.5.0",
+    "vmas[gymnasium]>=1.5.2",
+    "wandb==0.23.0",
+    "websocket-client>=1.9.0",
+    "whichcraft>=0.6.1",
+    "wrapt>=1.17.3",
+]
+
+[tool.uv.sources]
+rware = { git = "https://github.com/e-zorzi/robotic-warehouse", rev = "custom" }
+pettingzoo = { git = "https://github.com/e-zorzi/pettingzoo", rev = "master" }
+matrixgames = { git = "https://github.com/uoe-agents/matrix-games.git" }
+smaclite = { git = "https://github.com/uoe-agents/smaclite.git" }

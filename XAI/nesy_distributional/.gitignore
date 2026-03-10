@@ -1,0 +1,54 @@
+# Python-generated files
+__pycache__/
+*.py[oc]
+build/
+dist/
+wheels/
+*.egg-info
+
+# Virtual environments
+.venv
+
+# .env file
+.env
+
+# wandb
+wandb/
+plots/
+NEWplots/
+C51/
+OLDPLOTS/
+C51rules/
+C51rulesv2/
+C51rules_multi/
+C51rulesV2/
+C51rulesv3/
+C51rulesV3/
+C51rulesTEST
+C51rulesV2a
+DQNbase/
+C51rt/
+C51rexp/
+C51rtsum/
+C51rtv2/
+C51rtv2exp/
+C51rtv3/
+C51rtv3ws/
+DQN/
+runs/
+run_3_seeds.sh
+run_5_seeds.sh
+run_5_seeds_delayed.sh
+run_1_seed_ALL.sh
+run_5_seeds_ALL.sh
+OLD_c51_rules_v2.py
+V2aplots/
+V2plots/
+VBaseplots/
+dqn_rules.py
+config_dqn.py
+old_stuff/
+dqn.py
+sac.py
+config_sac.py
+run_all.sh

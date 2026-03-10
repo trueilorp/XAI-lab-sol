@@ -1,0 +1,2876 @@
+{
+    "0": {
+        "1001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 2; goal(west, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 2; goal(south, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 <= 2; ego(n); good_shelf(west, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 3; ego(n); agent(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V2 <= 2; V1 >= 3; goal(north, V2); goal(north, V1); ego(n).",
+                    "forward :- V2 <= 1; V1 >= 2; goal(north, V2); goal(north, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; goal(east, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 >= 3; ego(n); agent(south, V1)."
+                ]
+            }
+        },
+        "2001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 2; ego(n); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(east, V1).",
+                    "left :- V1 >= 1; ego(n); agent(east, V1).",
+                    "left :- V1 <= 2; ego(b); good_shelf(east, V1).",
+                    "left :- V1 <= 2; ego(b); agent(north, V1).",
+                    "left :- V1 <= 2; ego(b); good_shelf(north, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 <= 1; ego(n); good_shelf(north, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 3; goal(north, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; goal(south, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 >= 3; goal(north, V1); ego(n)."
+                ]
+            }
+        },
+        "3001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 1; goal(south, V1); ego(b)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; goal(north, V1); ego(b).",
+                    "left :- V1 <= 3; goal(west, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 >= 0; goal(west, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V1 >= 2; ego(b); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(n); agent(south, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; ego(b); agent(north, V1).",
+                    "forward :- V1 >= 0; ego(b); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V2 >= 0; V1 >= 1; ego(b); agent(east, V2); agent(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 1; V1 <= 2; goal(east, V2); goal(north, V1); ego(b)."
+                ],
+                "load": [
+                    "load :- V1 >= 0; ego(b); agent(west, V1)."
+                ]
+            }
+        },
+        "4001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(b); agent(west, V1).",
+                    "forward :- V1 <= 2; ego(b); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; goal(north, V1); ego(n).",
+                    "left :- V1 >= 0; goal(west, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; ego(g); good_shelf(north, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 2; ego(b); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 2; ego(b); good_shelf(east, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(n).",
+                    "forward :- V1 <= 2; ego(g); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 2; ego(g); agent(east, V2); agent(south, V1)."
+                ],
+                "load": [
+                    "load :- V2 >= 0; V1 <= 3; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "5001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(g); good_shelf(west, V1).",
+                    "forward :- V1 >= 0; ego(b); agent(west, V1).",
+                    "forward :- V2 >= 0; V1 <= 3; ego(n); good_shelf(west, V2); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(n); good_shelf(south, V1).",
+                    "left :- V1 <= 3; goal(west, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 >= 1; V1 <= 1; ego(g); good_shelf(south, V2); good_shelf(west, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 1; ego(n); good_shelf(north, V1).",
+                    "forward :- V2 >= 1; V1 <= 3; goal(east, V2); ego(n); agent(south, V1).",
+                    "forward :- V1 <= 2; goal(south, V1); ego(n).",
+                    "forward :- V1 <= 2; ego(g); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V2 <= 0; V1 >= 0; ego(n); good_shelf(south, V2); good_shelf(west, V1).",
+                    "left :- V1 >= 1; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 0; goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 2; V1 >= 3; ego(b); good_shelf(south, V2); good_shelf(west, V1).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "6001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(b); good_shelf(west, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 2; goal(south, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 >= 2; V1 >= 3; ego(g); good_shelf(west, V2); good_shelf(south, V1).",
+                    "right :- V2 >= 0; V1 >= 1; goal(west, V1); ego(g); good_shelf(north, V2).",
+                    "right :- V2 >= 0; V1 <= 2; goal(south, V2); goal(east, V1); ego(g).",
+                    "right :- V2 <= 0; V1 >= 2; goal(south, V2); goal(east, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V1 <= 0; ego(b); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 3; goal(east, V1); ego(n).",
+                    "forward :- V1 >= 0; ego(g); agent(east, V1).",
+                    "forward :- V1 <= 2; goal(south, V1); ego(n).",
+                    "forward :- V1 >= 0; ego(n); agent(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 2; ego(n); agent(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 1; V1 >= 3; goal(north, V2); goal(west, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 3; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "7001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 2; ego(n); agent(east, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; goal(west, V1); ego(n).",
+                    "left :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 >= 3; ego(g); agent(west, V2); good_shelf(south, V1).",
+                    "right :- V1 <= 2; ego(g); good_shelf(north, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 2; ego(b); good_shelf(east, V1).",
+                    "load :- V2 >= 2; V1 <= 3; goal(south, V2); goal(west, V1); ego(b).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 <= 0; V1 <= 2; ego(b); agent(north, V1); good_shelf(south, V2)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 1; goal(south, V1); ego(n).",
+                    "forward :- V2 >= 3; V1 <= 3; goal(east, V2); goal(south, V1); ego(n).",
+                    "forward :- V1 >= 0; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 2; goal(south, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 >= 2; V1 >= 3; goal(south, V2); goal(east, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V2 >= 0; V1 <= 1; goal(west, V2); ego(b); agent(west, V1).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V1 >= 3; ego(b); agent(east, V1)."
+                ]
+            }
+        },
+        "20001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 2; goal(west, V1); ego(g).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(n); agent(south, V1).",
+                    "left :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 >= 3; ego(g); agent(west, V2); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V2 >= 1; V1 >= 2; ego(b); agent(south, V2); agent(west, V1).",
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(g); agent(east, V1).",
+                    "forward :- V1 <= 3; ego(b); good_shelf(west, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; ego(n); good_shelf(south, V1).",
+                    "left :- V1 >= 1; ego(b); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 3; V1 >= 3; goal(east, V2); goal(south, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V2 >= 2; V1 >= 3; goal(south, V2); goal(west, V1); ego(b).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        }
+    },
+    "1": {
+        "1001000": {
+            "0": {
+                "forward": [
+                    "forward :- V2 >= 2; V1 <= 3; ego(n); agent(east, V2); agent(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 1; ego(n); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V2 >= 1; V1 >= 2; goal(north, V1); ego(n); good_shelf(south, V2)."
+                ],
+                "left": [
+                    "left :- V1 <= 0; ego(n); good_shelf(east, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 0; V1 <= 3; goal(south, V2); ego(n); good_shelf(west, V1)."
+                ],
+                "load": [
+                    "load :- V2 >= 1; V1 >= 3; goal(north, V1); ego(n); good_shelf(west, V2)."
+                ]
+            }
+        },
+        "2001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(n); good_shelf(west, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 1; goal(north, V1); ego(b)."
+                ],
+                "load": [
+                    "load :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 0; ego(n); good_shelf(south, V1).",
+                    "forward :- V2 <= 2; V1 >= 3; ego(n); good_shelf(west, V2); good_shelf(west, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; goal(east, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 <= 2; ego(n); good_shelf(west, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 3; goal(north, V1); ego(n)."
+                ]
+            }
+        },
+        "3001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 1; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 2; ego(g); agent(south, V1).",
+                    "forward :- V1 <= 2; ego(b); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; ego(n); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 1; ego(b); good_shelf(north, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(b); agent(west, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; ego(n); agent(north, V1)."
+                ],
+                "left": [
+                    "left :- V2 <= 2; V1 >= 3; ego(n); good_shelf(west, V2); good_shelf(west, V1).",
+                    "left :- V1 >= 1; ego(n); agent(east, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 3; ego(n); good_shelf(west, V1).",
+                    "right :- V1 >= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 1; V1 <= 3; ego(n); good_shelf(south, V2); good_shelf(east, V1).",
+                    "load :- V2 <= 1; V1 <= 1; ego(n); good_shelf(north, V2); good_shelf(west, V1)."
+                ]
+            }
+        },
+        "4001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 1; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 2; ego(g); agent(west, V1).",
+                    "forward :- V1 >= 0; ego(b); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); agent(east, V1).",
+                    "left :- V1 >= 0; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 2; goal(east, V2); goal(south, V1); ego(g).",
+                    "right :- V1 <= 0; ego(g); good_shelf(east, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 1; ego(b); good_shelf(north, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; goal(south, V1); ego(n).",
+                    "forward :- V1 <= 1; ego(g); agent(west, V1).",
+                    "forward :- V1 >= 2; ego(b); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; ego(b); agent(north, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 2; ego(g); agent(east, V2); agent(south, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 3; ego(n); good_shelf(south, V2); good_shelf(east, V1).",
+                    "load :- V1 >= 3; goal(west, V1); ego(b)."
+                ]
+            }
+        },
+        "5001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 3; ego(b); agent(west, V1).",
+                    "forward :- V1 <= 1; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; ego(g); agent(east, V1).",
+                    "forward :- V1 >= 3; ego(b); agent(north, V1).",
+                    "forward :- V1 <= 1; ego(b); good_shelf(west, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 2; ego(b); good_shelf(south, V1).",
+                    "left :- V2 >= 0; V1 <= 2; ego(b); agent(north, V1); good_shelf(east, V2).",
+                    "left :- V2 >= 1; V1 <= 1; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 2; goal(south, V1); ego(g).",
+                    "right :- V2 <= 1; V1 >= 3; ego(g); good_shelf(east, V2); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V1 >= 3; goal(west, V1); ego(b)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(b); agent(west, V1).",
+                    "forward :- V1 <= 2; ego(n); good_shelf(west, V1).",
+                    "forward :- V1 >= 0; ego(g); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; ego(b); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 <= 3; ego(g); agent(west, V2); agent(north, V1)."
+                ],
+                "load": [
+                    "load :- V2 >= 1; V1 <= 3; ego(b); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 >= 2; V1 >= 3; ego(b); agent(west, V2); good_shelf(west, V1).",
+                    "load :- V2 >= 1; V1 >= 3; ego(b); agent(south, V2); agent(east, V1)."
+                ]
+            }
+        },
+        "6001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 2; ego(n); agent(east, V1).",
+                    "forward :- V1 <= 1; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; goal(east, V1); ego(b).",
+                    "forward :- V1 <= 3; goal(north, V1); ego(g)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; goal(south, V1); ego(g).",
+                    "left :- V1 >= 1; goal(north, V1); ego(b).",
+                    "left :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 <= 2; ego(g); good_shelf(west, V2); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V1 >= 2; ego(b); agent(north, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 2; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 3; ego(g); good_shelf(west, V1).",
+                    "forward :- V2 >= 0; V1 <= 3; ego(n); good_shelf(east, V2); good_shelf(north, V1).",
+                    "forward :- V1 <= 0; ego(g); good_shelf(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(g); good_shelf(east, V1).",
+                    "left :- V2 >= 0; V1 <= 2; ego(n); good_shelf(west, V2); good_shelf(south, V1).",
+                    "left :- V1 >= 2; ego(n); agent(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 0; ego(g); agent(east, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(east, V1).",
+                    "load :- V2 <= 2; V1 <= 2; ego(b); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 <= 1; V1 <= 1; ego(b); agent(south, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "7001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 3; ego(g); good_shelf(east, V1).",
+                    "forward :- V1 <= 1; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; ego(b); agent(west, V1).",
+                    "forward :- V1 >= 0; ego(g); agent(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 0; goal(south, V1); ego(b).",
+                    "left :- V2 <= 2; V1 <= 3; ego(n); good_shelf(south, V2); good_shelf(north, V1).",
+                    "left :- V2 <= 0; V1 >= 0; ego(n); good_shelf(south, V2); good_shelf(west, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 1; goal(east, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 1; V1 >= 1; goal(west, V1); ego(b); agent(west, V2).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 2; ego(g); agent(south, V1).",
+                    "forward :- V1 <= 1; goal(south, V1); ego(n).",
+                    "forward :- V1 <= 3; goal(east, V1); ego(b)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(n); good_shelf(south, V1).",
+                    "left :- V1 <= 1; goal(north, V1); ego(b).",
+                    "left :- V1 <= 3; ego(n); agent(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 2; goal(east, V2); goal(north, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 <= 3; ego(b); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "20001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 2; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 3; ego(n); agent(south, V1).",
+                    "forward :- V1 <= 3; goal(north, V1); ego(g)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 0; V1 <= 1; goal(north, V1); ego(g); agent(north, V2).",
+                    "right :- V2 <= 1; V1 >= 3; goal(west, V1); ego(g); agent(west, V2).",
+                    "right :- V2 >= 1; V1 <= 3; goal(east, V2); goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 3; ego(b); agent(west, V1).",
+                    "forward :- V1 >= 3; ego(b); good_shelf(west, V1).",
+                    "forward :- V1 >= 0; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 0; goal(east, V1); ego(g)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; goal(north, V1); ego(b)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 >= 1; ego(g); good_shelf(east, V2); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V2 >= 2; V1 >= 2; goal(south, V2); goal(west, V1); ego(b).",
+                    "load :- V2 <= 2; V1 >= 3; ego(b); agent(east, V1); good_shelf(south, V2).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 >= 1; V1 >= 2; ego(b); agent(south, V1); good_shelf(north, V2)."
+                ]
+            }
+        }
+    },
+    "2": {
+        "1001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V2 >= 2; V1 >= 2; ego(n); agent(east, V2); agent(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 1; V1 <= 1; ego(n); agent(south, V2); agent(west, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 2; ego(n); agent(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 1; ego(n); agent(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 0; ego(n); agent(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; ego(b); good_shelf(east, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 2; ego(n); agent(west, V1)."
+                ]
+            }
+        },
+        "2001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 1; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 2; ego(n); agent(west, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); agent(east, V1).",
+                    "left :- V1 <= 3; goal(east, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 <= 3; ego(n); agent(east, V2); agent(north, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 1; goal(east, V1); ego(n)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(b); agent(east, V1).",
+                    "forward :- V1 >= 3; ego(b); good_shelf(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; ego(b); agent(west, V1).",
+                    "left :- V1 <= 3; goal(east, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 1; ego(n); agent(east, V1)."
+                ]
+            }
+        },
+        "3001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 1; ego(n); agent(east, V1).",
+                    "forward :- V1 >= 2; goal(south, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; ego(n); agent(north, V1).",
+                    "left :- V2 >= 0; V1 >= 1; goal(north, V2); goal(west, V1); ego(n).",
+                    "left :- V1 <= 2; goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 >= 1; V1 >= 1; goal(north, V2); goal(west, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V1 <= 0; ego(n); agent(south, V1).",
+                    "load :- V2 >= 1; V1 <= 2; ego(b); agent(south, V2); agent(west, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 2; ego(b); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; ego(n); agent(east, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 1; V1 <= 2; goal(east, V2); goal(north, V1); ego(b)."
+                ],
+                "load": [
+                    "load :- V1 <= 2; ego(b); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "4001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 1; ego(g); agent(south, V1).",
+                    "forward :- V2 <= 1; V1 >= 1; ego(n); good_shelf(east, V2); good_shelf(north, V1).",
+                    "forward :- V1 >= 2; ego(n); agent(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); agent(east, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 1; V1 >= 1; goal(north, V2); goal(west, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V1 >= 0; goal(north, V1); ego(n)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 2; ego(b); good_shelf(east, V1).",
+                    "forward :- V1 >= 0; ego(n); agent(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; ego(n); agent(east, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; ego(g); agent(west, V1).",
+                    "right :- V1 >= 2; ego(g); agent(north, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "5001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 1; ego(n); agent(north, V1).",
+                    "forward :- V1 <= 1; ego(n); agent(south, V1).",
+                    "forward :- V1 >= 0; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; ego(b); agent(west, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 1; V1 <= 1; ego(g); good_shelf(south, V2); good_shelf(west, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 1; V1 <= 2; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); agent(west, V1).",
+                    "forward :- V1 >= 0; goal(north, V1); ego(n).",
+                    "forward :- V1 >= 0; ego(g); agent(south, V1).",
+                    "forward :- V1 <= 0; ego(b); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; ego(n); good_shelf(south, V1).",
+                    "left :- V1 <= 2; goal(west, V1); ego(n).",
+                    "left :- V1 <= 1; ego(n); agent(west, V1).",
+                    "left :- V2 <= 1; V1 >= 2; ego(n); agent(east, V2); agent(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 0; goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V1 >= 3; goal(west, V1); ego(b).",
+                    "load :- V2 >= 1; V1 >= 2; goal(south, V1); ego(n); good_shelf(south, V2)."
+                ]
+            }
+        },
+        "6001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 1; ego(n); agent(east, V1).",
+                    "forward :- V1 >= 0; ego(b); agent(west, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(b)."
+                ],
+                "left": [
+                    "left :- V1 <= 0; ego(n); agent(south, V1).",
+                    "left :- V1 >= 3; ego(n); agent(east, V1).",
+                    "left :- V1 >= 3; ego(n); good_shelf(south, V1).",
+                    "left :- V2 <= 1; V1 <= 1; ego(n); agent(north, V2); agent(west, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 2; V1 <= 3; goal(south, V2); goal(west, V1); ego(b)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 1; ego(n); agent(east, V1).",
+                    "forward :- V1 <= 2; ego(b); good_shelf(north, V1).",
+                    "forward :- V2 >= 0; V1 <= 1; ego(n); agent(west, V2); agent(north, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; ego(n); agent(south, V1).",
+                    "left :- V1 >= 0; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 0; goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 2; V1 <= 2; ego(b); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "7001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 2; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 1; goal(east, V1); ego(g).",
+                    "forward :- V1 >= 1; ego(n); agent(south, V1).",
+                    "forward :- V1 >= 1; ego(n); agent(west, V1)."
+                ],
+                "left": [
+                    "left :- V2 <= 2; V1 <= 2; ego(n); good_shelf(south, V2); good_shelf(west, V1).",
+                    "left :- V1 >= 3; ego(n); agent(east, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 0; goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 >= 2; V1 >= 2; goal(south, V2); goal(west, V1); ego(b).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V2 <= 2; V1 <= 2; ego(n); agent(south, V2); agent(west, V1).",
+                    "forward :- V1 <= 1; ego(n); agent(north, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 3; goal(south, V1); ego(g).",
+                    "forward :- V1 <= 1; goal(east, V1); ego(g)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); agent(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 3; ego(g); good_shelf(north, V1).",
+                    "right :- V1 >= 1; ego(g); agent(south, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "20001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 1; ego(n); agent(east, V1).",
+                    "forward :- V1 >= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 1; goal(east, V1); ego(b)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; ego(n); agent(north, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 1; ego(g); agent(west, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 2; goal(north, V1); ego(b).",
+                    "load :- V2 <= 0; V1 <= 2; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(b); agent(east, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(b).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; ego(n); agent(east, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 0; goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 >= 2; V1 >= 3; goal(south, V2); goal(west, V1); ego(b).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        }
+    },
+    "3": {
+        "1001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 1; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 2; goal(south, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 >= 3; ego(n); good_shelf(north, V1).",
+                    "right :- V2 >= 2; V1 >= 3; ego(n); good_shelf(west, V2); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 1; ego(n); good_shelf(west, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; ego(n); agent(north, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 2; V1 <= 2; goal(east, V2); goal(north, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 >= 1; goal(south, V1); ego(n)."
+                ]
+            }
+        },
+        "2001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(west, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(b); agent(north, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 1; ego(n); agent(south, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 <= 3; goal(north, V2); goal(east, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 >= 1; ego(n); agent(east, V1)."
+                ]
+            }
+        },
+        "3001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 3; ego(g); good_shelf(east, V1).",
+                    "forward :- V1 >= 0; ego(b); agent(west, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V2 <= 0; V1 >= 0; ego(n); good_shelf(south, V2); good_shelf(west, V1).",
+                    "left :- V2 >= 1; V1 <= 3; ego(n); good_shelf(south, V2); good_shelf(east, V1).",
+                    "left :- V1 <= 2; goal(north, V1); ego(b)."
+                ],
+                "right": [
+                    "right :- V1 <= 0; goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V1 <= 0; ego(n); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 3; goal(east, V1); ego(n).",
+                    "forward :- V1 >= 1; ego(n); agent(west, V1).",
+                    "forward :- V1 >= 2; ego(n); good_shelf(west, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; goal(north, V1); ego(n).",
+                    "left :- V1 <= 1; ego(n); good_shelf(east, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 0; V1 >= 2; goal(south, V2); goal(east, V1); ego(b)."
+                ],
+                "load": [
+                    "load :- V1 >= 0; ego(b); agent(west, V1)."
+                ]
+            }
+        },
+        "4001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(east, V1).",
+                    "forward :- V1 <= 2; ego(b); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 0; ego(g); good_shelf(east, V1).",
+                    "right :- V2 >= 1; V1 >= 3; goal(east, V2); goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V1 <= 2; ego(b); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 2; ego(b); good_shelf(east, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(n); good_shelf(south, V1).",
+                    "left :- V1 >= 2; goal(north, V1); ego(n).",
+                    "left :- V1 >= 0; ego(g); good_shelf(west, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 0; V1 >= 2; ego(g); agent(east, V2); agent(south, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "5001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(g); agent(east, V1).",
+                    "forward :- V1 >= 0; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; goal(south, V1); ego(b)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 <= 1; goal(north, V2); goal(west, V1); ego(b).",
+                    "right :- V2 <= 1; V1 >= 3; goal(south, V2); goal(east, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 >= 2; V1 >= 2; goal(south, V2); goal(west, V1); ego(b)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 3; goal(west, V1); ego(n).",
+                    "forward :- V1 >= 0; ego(g); agent(east, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 2; goal(south, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 3; V1 <= 3; ego(g); agent(east, V2); agent(north, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 0; ego(n); agent(south, V1)."
+                ]
+            }
+        },
+        "6001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(g); agent(east, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; ego(n); agent(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 3; goal(east, V2); goal(south, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V2 >= 1; V1 <= 1; ego(b); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 3; goal(east, V2); goal(east, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V2 <= 1; V1 <= 2; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "7001000": {
+            "0": {
+                "forward": [
+                    "forward :- V2 >= 0; V1 >= 0; ego(n); good_shelf(east, V2); good_shelf(north, V1).",
+                    "forward :- V1 <= 0; ego(g); good_shelf(south, V1).",
+                    "forward :- V1 <= 0; goal(east, V1); ego(g)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 3; goal(east, V2); goal(south, V1); ego(n).",
+                    "right :- V1 <= 0; ego(g); agent(east, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 2; ego(b); good_shelf(south, V2); good_shelf(east, V1).",
+                    "load :- V2 >= 2; V1 <= 3; goal(south, V2); goal(west, V1); ego(b).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V1 >= 3; goal(north, V1); ego(b)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 3; goal(east, V2); goal(east, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V2 >= 1; V1 <= 2; goal(north, V2); ego(n); agent(north, V1)."
+                ]
+            }
+        },
+        "20001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(g); agent(east, V1).",
+                    "forward :- V1 >= 0; ego(b); agent(west, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 0; ego(g); agent(east, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 2; V1 <= 2; ego(b); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 1; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 3; ego(g); agent(south, V1).",
+                    "forward :- V1 <= 1; goal(south, V1); ego(n).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(g)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 2; goal(south, V2); ego(g); good_shelf(west, V1).",
+                    "right :- V2 >= 3; V1 <= 3; ego(g); agent(east, V2); agent(north, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 <= 1; V1 >= 2; goal(west, V1); ego(b); good_shelf(north, V2)."
+                ]
+            }
+        }
+    },
+    "4": {
+        "1001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 2; goal(south, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; ego(n); agent(west, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; goal(south, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 >= 3; ego(n); good_shelf(north, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V2 <= 1; V1 >= 2; goal(south, V2); goal(south, V1); ego(n).",
+                    "forward :- V2 >= 0; V1 >= 1; goal(west, V2); goal(north, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V2 >= 1; V1 >= 1; goal(east, V2); goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; ego(n); agent(south, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 1; ego(n); agent(east, V1).",
+                    "load :- V1 <= 2; goal(north, V1); ego(n)."
+                ]
+            }
+        },
+        "2001000": {
+            "0": {
+                "forward": [
+                    "forward :- V2 <= 2; V1 >= 3; goal(south, V2); goal(south, V1); ego(b).",
+                    "forward :- V2 <= 1; V1 <= 2; goal(west, V2); goal(south, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 2; goal(south, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; goal(south, V1); ego(b)."
+                ],
+                "load": [
+                    "load :- V1 <= 1; ego(n); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 2; goal(south, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; ego(n); good_shelf(north, V1).",
+                    "left :- V1 <= 1; goal(east, V1); ego(n).",
+                    "left :- V1 >= 1; ego(n); agent(east, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 <= 2; goal(east, V2); goal(south, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 >= 3; goal(south, V1); ego(n)."
+                ]
+            }
+        },
+        "3001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 2; goal(south, V1); ego(n).",
+                    "forward :- V1 <= 2; ego(b); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 2; goal(south, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 >= 0; goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V1 <= 2; ego(b); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 0; goal(west, V1); ego(n).",
+                    "forward :- V2 <= 1; V1 >= 2; ego(n); good_shelf(south, V2); good_shelf(east, V1).",
+                    "forward :- V1 >= 2; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 2; goal(south, V1); ego(b).",
+                    "forward :- V1 <= 2; goal(south, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 <= 0; V1 <= 3; ego(g); agent(east, V2); agent(south, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(east, V2); good_shelf(north, V1)."
+                ]
+            }
+        },
+        "4001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 2; ego(b); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; goal(west, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 >= 1; V1 >= 3; goal(east, V2); goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 3; goal(east, V1); ego(n).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; ego(n); good_shelf(south, V1).",
+                    "left :- V1 >= 3; goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 <= 1; ego(g); agent(east, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "5001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(b); good_shelf(west, V1).",
+                    "forward :- V1 <= 1; goal(east, V1); ego(g).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; goal(west, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 >= 0; V1 <= 2; goal(south, V2); goal(east, V1); ego(g).",
+                    "right :- V2 <= 0; V1 >= 2; goal(south, V2); goal(east, V1); ego(g).",
+                    "right :- V2 >= 1; V1 >= 1; goal(south, V2); goal(west, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(east, V1).",
+                    "load :- V2 <= 1; V1 >= 2; goal(west, V1); ego(b); good_shelf(north, V2)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; goal(south, V1); ego(n).",
+                    "forward :- V1 <= 1; goal(east, V1); ego(g).",
+                    "forward :- V1 <= 3; goal(south, V1); ego(b).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; ego(n); good_shelf(south, V1).",
+                    "left :- V2 <= 2; V1 <= 2; ego(n); good_shelf(south, V2); good_shelf(west, V1).",
+                    "left :- V2 >= 1; V1 <= 1; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "left :- V1 <= 1; goal(east, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 <= 1; ego(g); agent(south, V2); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "6001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 1; goal(south, V1); ego(b).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; goal(north, V1); ego(g)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; goal(west, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 >= 0; V1 <= 2; goal(south, V2); goal(east, V1); ego(g).",
+                    "right :- V1 <= 2; goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 3; goal(east, V1); ego(n).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; goal(north, V1); ego(n).",
+                    "left :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 1; ego(g); agent(west, V1)."
+                ],
+                "load": [
+                    "load :- V2 >= 1; V1 >= 3; ego(b); agent(west, V1); good_shelf(east, V2).",
+                    "load :- V2 >= 0; V1 <= 2; ego(b); good_shelf(south, V2); good_shelf(east, V1).",
+                    "load :- V2 >= 2; V1 >= 3; goal(west, V2); goal(south, V1); ego(b).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 >= 2; V1 >= 3; goal(east, V2); goal(south, V1); ego(b)."
+                ]
+            }
+        },
+        "7001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; goal(south, V1); ego(n).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 3; goal(north, V1); ego(g)."
+                ],
+                "left": [
+                    "left :- V2 <= 2; V1 <= 2; ego(n); good_shelf(south, V2); good_shelf(west, V1).",
+                    "left :- V1 <= 3; goal(west, V1); ego(n).",
+                    "left :- V2 >= 1; V1 <= 1; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 0; V1 <= 2; goal(south, V2); goal(east, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 1; V1 <= 1; ego(b); agent(north, V2); agent(west, V1).",
+                    "load :- V2 >= 0; V1 >= 3; goal(west, V2); goal(north, V1); ego(b).",
+                    "load :- V2 <= 1; V1 <= 2; goal(west, V1); ego(b); agent(south, V2).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 <= 1; V1 <= 3; goal(west, V1); ego(b); good_shelf(north, V2)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 3; goal(east, V1); ego(n).",
+                    "forward :- V1 <= 1; goal(east, V1); ego(g).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 3; ego(b); good_shelf(south, V1)."
+                ],
+                "left": [
+                    "left :- V2 <= 1; V1 >= 2; ego(n); good_shelf(south, V2); good_shelf(east, V1).",
+                    "left :- V1 >= 1; ego(n); good_shelf(south, V1).",
+                    "left :- V1 <= 1; goal(east, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 <= 1; ego(g); agent(east, V2); agent(north, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 1; V1 >= 1; goal(east, V1); ego(b); agent(north, V2).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "20001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 1; ego(b); good_shelf(north, V1).",
+                    "forward :- V2 <= 2; V1 <= 2; ego(b); good_shelf(south, V2); good_shelf(west, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 1; goal(south, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; goal(west, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 >= 0; V1 <= 2; goal(south, V2); goal(east, V1); ego(g).",
+                    "right :- V1 <= 2; goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V1 <= 1; ego(b); good_shelf(south, V1).",
+                    "load :- V2 <= 0; V1 <= 2; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 3; goal(east, V1); ego(n).",
+                    "forward :- V1 >= 2; ego(b); good_shelf(east, V1).",
+                    "forward :- V1 >= 0; ego(g); agent(east, V1)."
+                ],
+                "left": [
+                    "left :- V2 <= 1; V1 >= 2; ego(n); good_shelf(south, V2); good_shelf(east, V1).",
+                    "left :- V1 >= 1; ego(n); good_shelf(south, V1).",
+                    "left :- V1 <= 1; goal(east, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 <= 0; V1 <= 1; ego(g); agent(south, V2); agent(east, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            }
+        }
+    },
+    "5": {
+        "1001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(n); agent(west, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; goal(east, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 >= 0; goal(south, V1); ego(n); agent(east, V2)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 1; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 2; ego(n); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(n); good_shelf(west, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 3; ego(n); agent(south, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 1; goal(east, V1); ego(n)."
+                ]
+            }
+        },
+        "2001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; ego(n); good_shelf(west, V1).",
+                    "left :- V1 >= 2; ego(b); good_shelf(north, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; goal(south, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V2 >= 2; V1 >= 2; ego(n); agent(east, V2); good_shelf(west, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; goal(south, V1); ego(n).",
+                    "left :- V1 <= 2; goal(north, V1); ego(n).",
+                    "left :- V1 >= 2; goal(east, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 <= 0; V1 <= 3; ego(b); agent(east, V1); good_shelf(south, V2)."
+                ],
+                "load": [
+                    "load :- V1 <= 3; ego(n); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "3001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 2; ego(b); agent(north, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 2; ego(b); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(b); good_shelf(south, V1).",
+                    "left :- V1 <= 2; goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 <= 2; goal(west, V2); goal(north, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 >= 3; ego(n); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 1; goal(east, V1); ego(b).",
+                    "forward :- V1 >= 2; ego(g); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; ego(n); good_shelf(south, V1).",
+                    "left :- V1 <= 2; goal(north, V1); ego(b)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; ego(g); agent(south, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 1; goal(east, V1); ego(b)."
+                ]
+            }
+        },
+        "4001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 2; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 0; ego(b); good_shelf(east, V1).",
+                    "forward :- V1 <= 1; goal(south, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; ego(g); good_shelf(north, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(g); agent(west, V1).",
+                    "forward :- V1 <= 2; ego(b); good_shelf(east, V1).",
+                    "forward :- V1 <= 2; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; ego(n); good_shelf(south, V1).",
+                    "left :- V1 >= 2; ego(b); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 0; ego(g); agent(east, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 3; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "5001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); agent(west, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(g)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 0; V1 >= 2; goal(south, V2); goal(east, V1); ego(b)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 3; ego(b); good_shelf(west, V1).",
+                    "forward :- V1 <= 2; ego(b); agent(north, V1).",
+                    "forward :- V1 <= 2; ego(g); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 1; ego(g); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 2; ego(b); agent(north, V1)."
+                ]
+            }
+        },
+        "6001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); agent(west, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(b).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; goal(north, V1); ego(b).",
+                    "left :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 <= 1; goal(west, V1); ego(g); agent(north, V2).",
+                    "right :- V2 <= 0; V1 <= 3; goal(south, V2); ego(g); agent(east, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 >= 2; V1 >= 2; goal(south, V2); goal(west, V1); ego(b).",
+                    "load :- V2 <= 1; V1 <= 3; ego(b); agent(west, V2); agent(north, V1).",
+                    "load :- V2 <= 1; V1 <= 2; ego(b); good_shelf(north, V2); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 2; ego(g); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 0; ego(g); good_shelf(east, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "7001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 1; ego(n); agent(east, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 2; ego(b); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 >= 1; goal(north, V1); ego(g); agent(north, V2).",
+                    "right :- V2 >= 1; V1 <= 3; goal(east, V2); goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V2 >= 1; V1 <= 1; goal(east, V2); goal(south, V1); ego(b).",
+                    "forward :- V1 <= 1; goal(east, V1); ego(g).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 2; ego(g); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; ego(n); good_shelf(south, V1).",
+                    "left :- V1 >= 1; goal(north, V1); ego(b)."
+                ],
+                "right": [
+                    "right :- V1 <= 1; ego(g); agent(west, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "20001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 2; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 0; ego(n); agent(south, V1).",
+                    "forward :- V1 <= 3; goal(north, V1); ego(g)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 1; goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(g); agent(east, V1).",
+                    "forward :- V1 <= 1; goal(east, V1); ego(b).",
+                    "forward :- V1 <= 2; ego(g); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 3; ego(g); good_shelf(west, V1).",
+                    "right :- V2 >= 3; V1 <= 3; ego(g); agent(south, V2); agent(west, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            }
+        }
+    },
+    "6": {
+        "1001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 3; ego(n); agent(west, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; goal(east, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 <= 2; goal(south, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 <= 2; goal(south, V1); ego(n)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 1; ego(n); good_shelf(south, V1).",
+                    "forward :- V2 >= 3; V1 >= 3; goal(east, V2); goal(north, V1); ego(n).",
+                    "forward :- V1 <= 1; ego(b); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 2; ego(b); good_shelf(east, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 3; goal(south, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 >= 1; goal(east, V1); ego(n)."
+                ]
+            }
+        },
+        "2001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; goal(south, V1); ego(n).",
+                    "left :- V1 >= 1; goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 <= 0; ego(n); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 1; goal(east, V1); ego(n)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 2; ego(b); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(b); good_shelf(east, V1).",
+                    "left :- V1 >= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 3; ego(n); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "3001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 1; ego(n); agent(east, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 2; goal(south, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V2 <= 2; V1 >= 3; ego(n); agent(west, V2); agent(south, V1).",
+                    "left :- V2 <= 0; V1 >= 0; ego(n); agent(east, V2); agent(north, V1).",
+                    "left :- V1 <= 0; ego(n); agent(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 1; V1 <= 1; goal(east, V2); goal(north, V1); ego(b)."
+                ],
+                "load": [
+                    "load :- V2 <= 2; V1 <= 3; ego(n); agent(south, V1); good_shelf(south, V2)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(west, V1).",
+                    "forward :- V1 >= 0; ego(g); agent(east, V1).",
+                    "forward :- V1 <= 2; goal(east, V1); ego(b)."
+                ],
+                "left": [
+                    "left :- V2 <= 0; V1 <= 1; ego(b); good_shelf(south, V2); good_shelf(west, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; ego(b); agent(west, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 1; V1 >= 1; ego(n); agent(east, V2); agent(south, V1)."
+                ]
+            }
+        },
+        "4001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(b); agent(west, V1).",
+                    "forward :- V1 <= 2; goal(south, V1); ego(n).",
+                    "forward :- V1 >= 0; ego(n); agent(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 0; ego(n); agent(east, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 3; V1 >= 3; goal(east, V2); goal(north, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(b); agent(east, V1).",
+                    "forward :- V1 >= 0; ego(b); agent(west, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; ego(n); agent(west, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 2; ego(g); agent(east, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "5001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 2; goal(south, V1); ego(n).",
+                    "forward :- V1 >= 0; ego(n); agent(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; ego(n); agent(north, V1).",
+                    "left :- V2 <= 1; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(west, V1).",
+                    "left :- V1 <= 0; goal(south, V1); ego(g).",
+                    "left :- V1 <= 1; ego(n); agent(east, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 3; V1 <= 3; ego(g); agent(south, V2); agent(west, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 1; ego(n); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(b); good_shelf(west, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; goal(west, V1); ego(g).",
+                    "left :- V1 >= 1; ego(n); agent(west, V1).",
+                    "left :- V2 >= 0; V1 <= 3; ego(n); good_shelf(west, V2); good_shelf(south, V1).",
+                    "left :- V2 >= 1; V1 <= 2; ego(b); good_shelf(south, V2); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 3; goal(east, V2); goal(east, V1); ego(g).",
+                    "right :- V2 <= 1; V1 >= 3; goal(south, V2); goal(east, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V1 <= 0; ego(b); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "6001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 3; goal(west, V1); ego(n).",
+                    "forward :- V1 >= 0; ego(b); agent(west, V1).",
+                    "forward :- V1 <= 3; ego(b); good_shelf(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; ego(n); agent(north, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 0; V1 >= 0; goal(north, V1); ego(n); agent(south, V2).",
+                    "right :- V2 >= 2; V1 >= 3; ego(g); agent(west, V1); good_shelf(south, V2)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; ego(n); agent(north, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(g)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; goal(east, V1); ego(b)."
+                ],
+                "right": [
+                    "right :- V1 <= 1; goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V1 >= 3; goal(east, V1); ego(b).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "7001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 1; goal(south, V1); ego(n).",
+                    "forward :- V1 >= 3; ego(g); good_shelf(west, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 2; ego(g); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; ego(g); good_shelf(east, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 0; V1 <= 2; goal(east, V2); goal(south, V1); ego(g).",
+                    "right :- V2 >= 0; V1 >= 0; goal(north, V1); ego(n); agent(west, V2)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(b); good_shelf(west, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 1; ego(b); agent(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(b); good_shelf(east, V1).",
+                    "left :- V1 <= 1; goal(north, V1); ego(b)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 3; goal(east, V2); goal(south, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 >= 0; ego(n); agent(north, V1)."
+                ]
+            }
+        },
+        "20001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 1; goal(east, V1); ego(g).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 2; goal(south, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; goal(north, V1); ego(b).",
+                    "left :- V1 <= 0; goal(south, V1); ego(g).",
+                    "left :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 2; goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 >= 0; V1 <= 1; ego(b); good_shelf(east, V2); good_shelf(north, V1).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(b); good_shelf(south, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; ego(n); agent(west, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 0; V1 >= 2; ego(n); agent(south, V2); agent(west, V1)."
+                ],
+                "load": [
+                    "load :- V2 >= 0; V1 <= 3; ego(n); good_shelf(south, V2); good_shelf(east, V1).",
+                    "load :- V2 >= 0; V1 <= 1; ego(b); good_shelf(east, V2); good_shelf(north, V1).",
+                    "load :- V2 <= 2; V1 >= 3; ego(b); agent(south, V2); agent(east, V1)."
+                ]
+            }
+        }
+    },
+    "7": {
+        "1001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 2; ego(b); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 2; ego(b); good_shelf(north, V1).",
+                    "load :- V1 <= 2; ego(n); good_shelf(west, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V2 <= 1; V1 >= 2; goal(north, V2); goal(north, V1); ego(n).",
+                    "forward :- V1 >= 3; goal(north, V1); ego(n).",
+                    "forward :- V2 >= 1; V1 >= 1; goal(east, V2); goal(south, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V2 <= 2; V1 <= 2; goal(east, V2); goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 >= 0; V1 <= 2; goal(north, V2); goal(south, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 1; goal(east, V2); goal(north, V1); ego(n)."
+                ]
+            }
+        },
+        "2001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 2; ego(n); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V2 >= 0; V1 <= 2; ego(n); good_shelf(east, V2); good_shelf(north, V1).",
+                    "left :- V2 >= 0; V1 >= 3; ego(n); good_shelf(south, V2); good_shelf(east, V1).",
+                    "left :- V1 <= 3; goal(west, V1); ego(n).",
+                    "left :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 >= 3; goal(east, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 <= 3; ego(b); good_shelf(west, V1).",
+                    "load :- V2 <= 2; V1 <= 3; ego(n); good_shelf(west, V2); good_shelf(north, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; ego(n); good_shelf(east, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 1; goal(east, V1); ego(n)."
+                ]
+            }
+        },
+        "3001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); agent(west, V1).",
+                    "forward :- V1 >= 3; goal(north, V1); ego(n).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 2; goal(south, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; goal(south, V1); ego(n).",
+                    "left :- V1 <= 2; goal(north, V1); ego(n).",
+                    "left :- V1 <= 2; ego(b); agent(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 2; goal(north, V1); ego(b)."
+                ],
+                "load": [
+                    "load :- V1 >= 3; ego(n); good_shelf(north, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 <= 3; ego(g); good_shelf(east, V2); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "4001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 2; ego(b); good_shelf(east, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; ego(n); agent(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; ego(g); good_shelf(north, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 1; V1 >= 2; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; ego(b); good_shelf(south, V1).",
+                    "left :- V2 <= 2; V1 <= 2; ego(n); good_shelf(south, V2); good_shelf(west, V1).",
+                    "left :- V1 <= 2; goal(north, V1); ego(n).",
+                    "left :- V1 <= 2; goal(north, V1); ego(b)."
+                ],
+                "right": [
+                    "right :- V1 >= 1; goal(east, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 >= 0; V1 <= 3; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "5001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 1; goal(east, V1); ego(b).",
+                    "forward :- V1 <= 2; ego(g); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; ego(n); good_shelf(south, V1).",
+                    "left :- V2 >= 0; V1 <= 2; ego(n); good_shelf(north, V2); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 <= 2; ego(g); agent(south, V2); agent(west, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 1; V1 <= 2; goal(south, V1); ego(n); good_shelf(south, V2)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(n).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(g)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 0; ego(g); agent(east, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "6001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 2; ego(g); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V2 >= 3; V1 <= 3; goal(south, V2); goal(west, V1); ego(n).",
+                    "left :- V1 >= 1; ego(n); good_shelf(south, V1).",
+                    "left :- V1 >= 0; goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 <= 1; ego(g); agent(east, V2); agent(north, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V1 >= 2; ego(b); agent(north, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(g); good_shelf(west, V1).",
+                    "forward :- V1 >= 0; ego(b); agent(west, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; ego(n); good_shelf(south, V1).",
+                    "left :- V1 <= 1; ego(n); good_shelf(north, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 2; ego(g); good_shelf(north, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 3; goal(east, V1); ego(b).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "7001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; ego(g); good_shelf(west, V1).",
+                    "forward :- V1 <= 3; goal(north, V1); ego(g)."
+                ],
+                "left": [
+                    "left :- V2 >= 1; V1 <= 2; ego(n); good_shelf(west, V2); good_shelf(south, V1).",
+                    "left :- V1 >= 2; ego(n); good_shelf(south, V1).",
+                    "left :- V2 <= 1; V1 >= 3; ego(g); good_shelf(west, V2); good_shelf(south, V1).",
+                    "left :- V1 <= 0; goal(south, V1); ego(g)."
+                ],
+                "right": [
+                    "right :- V1 <= 3; ego(g); good_shelf(east, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 1; ego(b); agent(east, V2); agent(south, V1).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 1; goal(east, V1); ego(n).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; ego(n); agent(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(n); good_shelf(south, V1).",
+                    "left :- V2 >= 0; V1 <= 1; ego(n); agent(north, V1); good_shelf(east, V2)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; goal(east, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 1; V1 >= 2; goal(south, V1); ego(n); good_shelf(south, V2)."
+                ]
+            }
+        },
+        "20001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(g); good_shelf(west, V1).",
+                    "forward :- V1 >= 0; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(g); good_shelf(west, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 <= 2; ego(g); agent(west, V2); agent(south, V1).",
+                    "right :- V2 <= 2; V1 <= 2; ego(g); agent(north, V2); agent(west, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 >= 2; V1 >= 3; goal(east, V2); goal(south, V1); ego(b)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(g); agent(west, V1).",
+                    "forward :- V1 <= 1; goal(east, V1); ego(n).",
+                    "forward :- V1 >= 0; ego(n); good_shelf(north, V1).",
+                    "forward :- V2 >= 0; V1 >= 1; goal(east, V2); goal(north, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(n); good_shelf(south, V1).",
+                    "left :- V2 >= 0; V1 >= 1; goal(west, V2); goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 3; goal(east, V2); goal(south, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V2 <= 1; V1 <= 3; ego(n); good_shelf(south, V2); good_shelf(east, V1).",
+                    "load :- V2 <= 1; V1 >= 1; ego(b); agent(north, V2); agent(west, V1)."
+                ]
+            }
+        }
+    },
+    "8": {
+        "1001000": {
+            "0": {
+                "forward": [
+                    "forward :- V2 <= 1; V1 <= 2; ego(n); good_shelf(south, V2); good_shelf(west, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 0; ego(n); good_shelf(west, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 2; ego(n); good_shelf(west, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; goal(west, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 >= 0; ego(n); agent(north, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 0; goal(west, V1); ego(n)."
+                ]
+            }
+        },
+        "2001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(n); good_shelf(west, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 0; ego(n); good_shelf(west, V1)."
+                ],
+                "load": [
+                    "load :- V2 >= 1; V1 <= 2; ego(n); good_shelf(east, V2); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 <= 0; goal(south, V1); ego(n).",
+                    "left :- V1 >= 1; ego(n); good_shelf(north, V1).",
+                    "left :- V1 >= 3; goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; goal(east, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 >= 3; ego(n); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "3001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 1; ego(b); agent(north, V1).",
+                    "forward :- V1 >= 0; ego(b); agent(west, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 0; ego(b); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 0; V1 >= 2; goal(south, V2); goal(east, V1); ego(b)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 3; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 2; ego(b); agent(north, V1).",
+                    "forward :- V1 >= 2; ego(b); agent(west, V1).",
+                    "forward :- V1 >= 1; goal(south, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; ego(n); agent(north, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 0; V1 >= 2; goal(south, V2); goal(east, V1); ego(b)."
+                ],
+                "load": [
+                    "load :- V2 >= 1; V1 >= 2; goal(south, V2); goal(east, V1); ego(n)."
+                ]
+            }
+        },
+        "4001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 3; ego(g); agent(west, V1).",
+                    "forward :- V1 >= 0; ego(b); good_shelf(north, V1).",
+                    "forward :- V1 >= 2; ego(n); good_shelf(west, V1)."
+                ],
+                "left": [
+                    "left :- V2 >= 0; V1 <= 2; ego(n); good_shelf(west, V2); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 0; V1 <= 2; goal(north, V1); ego(b); good_shelf(west, V2)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 2; ego(n); agent(west, V1).",
+                    "forward :- V1 >= 0; goal(south, V1); ego(n).",
+                    "forward :- V1 >= 0; ego(b); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; goal(west, V1); ego(n).",
+                    "left :- V1 <= 3; ego(b); good_shelf(south, V1).",
+                    "left :- V1 >= 0; goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 >= 1; goal(east, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "5001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 3; goal(east, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V1 <= 1; ego(b); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(b); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; ego(g); good_shelf(east, V1).",
+                    "forward :- V1 <= 3; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; ego(b); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 0; goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        },
+        "6001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(g); agent(east, V1).",
+                    "forward :- V1 <= 3; ego(g); good_shelf(east, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 >= 2; goal(north, V2); goal(east, V1); ego(g).",
+                    "right :- V1 <= 1; ego(g); good_shelf(west, V1).",
+                    "right :- V2 <= 1; V1 >= 1; goal(west, V1); ego(g); agent(north, V2)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 1; goal(east, V1); ego(g).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(b).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; ego(n); agent(north, V1).",
+                    "left :- V1 >= 1; goal(north, V1); ego(b)."
+                ],
+                "right": [
+                    "right :- V2 <= 0; V1 <= 3; ego(g); agent(east, V2); agent(north, V1).",
+                    "right :- V2 <= 0; V1 >= 1; goal(south, V2); goal(east, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 2; V1 >= 3; goal(south, V1); ego(b); good_shelf(west, V2).",
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(east, V1).",
+                    "load :- V2 <= 1; V1 <= 3; ego(b); good_shelf(north, V2); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "7001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(g); agent(east, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 2; V1 >= 3; ego(g); good_shelf(east, V2); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(g); good_shelf(east, V1).",
+                    "forward :- V1 <= 2; goal(south, V1); ego(n).",
+                    "forward :- V1 <= 1; ego(n); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; goal(west, V1); ego(n).",
+                    "left :- V2 <= 0; V1 >= 0; goal(east, V2); goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 3; goal(east, V2); goal(south, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V2 >= 2; V1 >= 3; ego(b); agent(west, V2); agent(north, V1).",
+                    "load :- V2 <= 2; V1 >= 3; ego(b); good_shelf(south, V2); good_shelf(west, V1).",
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "20001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 1; goal(south, V1); ego(b).",
+                    "forward :- V1 >= 0; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 1; ego(g); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V2 >= 0; V1 <= 2; ego(n); good_shelf(west, V2); good_shelf(south, V1).",
+                    "left :- V2 >= 0; V1 <= 2; ego(b); agent(south, V1); good_shelf(east, V2)."
+                ],
+                "right": [
+                    "right :- V2 <= 1; V1 <= 3; goal(east, V2); goal(south, V1); ego(g).",
+                    "right :- V2 >= 2; V1 <= 2; ego(g); agent(south, V2); good_shelf(south, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 2; V1 <= 2; ego(b); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 1; ego(n); agent(east, V1).",
+                    "forward :- V1 >= 3; ego(b); good_shelf(south, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(n).",
+                    "forward :- V1 <= 2; ego(b); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V2 >= 1; V1 <= 2; ego(b); good_shelf(south, V2); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 3; goal(east, V2); goal(south, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V2 >= 3; V1 >= 3; goal(east, V2); goal(south, V1); ego(b).",
+                    "load :- V2 <= 0; V1 >= 1; ego(b); agent(east, V2); good_shelf(north, V1).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            }
+        }
+    },
+    "9": {
+        "1001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; goal(west, V1); ego(b)."
+                ],
+                "right": [
+                    "right :- V2 >= 2; V1 >= 2; ego(b); good_shelf(east, V2); good_shelf(north, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 3; ego(n); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V2 >= 1; V1 <= 2; goal(south, V2); goal(south, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; goal(south, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 <= 3; goal(north, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 <= 3; goal(north, V1); ego(n)."
+                ]
+            }
+        },
+        "2001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(b); good_shelf(west, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; goal(south, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 3; ego(n); good_shelf(east, V2); good_shelf(north, V1).",
+                    "load :- V2 >= 0; V1 >= 3; ego(n); good_shelf(south, V2); good_shelf(north, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 1; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; goal(east, V1); ego(n).",
+                    "left :- V1 <= 2; goal(south, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 <= 2; goal(south, V1); ego(n)."
+                ],
+                "load": [
+                    "load :- V1 <= 2; goal(south, V1); ego(n)."
+                ]
+            }
+        },
+        "3001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 2; ego(b); good_shelf(east, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 1; ego(n); good_shelf(south, V1).",
+                    "left :- V2 >= 1; V1 >= 3; goal(east, V2); goal(south, V1); ego(n).",
+                    "left :- V1 >= 3; goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 <= 1; ego(g); good_shelf(west, V1)."
+                ],
+                "load": [
+                    "load :- V1 >= 3; goal(east, V1); ego(b)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 3; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; goal(north, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V1 <= 3; ego(g); good_shelf(east, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 2; ego(n); good_shelf(east, V2); good_shelf(north, V1)."
+                ]
+            }
+        },
+        "4001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(b); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 0; V1 <= 2; goal(north, V1); ego(b); good_shelf(west, V2)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 2; ego(b); good_shelf(east, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(n)."
+                ],
+                "left": [
+                    "left :- V2 <= 2; V1 >= 3; goal(north, V2); goal(north, V1); ego(n).",
+                    "left :- V1 >= 1; ego(n); good_shelf(south, V1).",
+                    "left :- V1 >= 2; goal(west, V1); ego(n)."
+                ],
+                "right": [
+                    "right :- V2 >= 3; V1 >= 3; goal(east, V2); goal(south, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 >= 0; V1 <= 3; ego(n); good_shelf(south, V2); good_shelf(north, V1)."
+                ]
+            }
+        },
+        "5001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 1; ego(n); agent(west, V1).",
+                    "forward :- V1 >= 1; ego(b); good_shelf(west, V1).",
+                    "forward :- V1 <= 2; ego(g); agent(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 3; ego(g); agent(west, V2); agent(north, V1)."
+                ],
+                "load": [
+                    "load :- V2 >= 1; V1 >= 3; goal(east, V2); goal(south, V1); ego(b).",
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(g); agent(east, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 1; ego(n); agent(east, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 <= 2; ego(g); agent(south, V2); agent(west, V1).",
+                    "right :- V2 >= 1; V1 <= 3; goal(east, V2); goal(south, V1); ego(g).",
+                    "right :- V2 <= 3; V1 >= 3; goal(north, V2); goal(west, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 1; V1 <= 2; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "6001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(b); good_shelf(north, V1).",
+                    "forward :- V1 >= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; ego(b); agent(west, V1).",
+                    "forward :- V1 <= 0; ego(b); good_shelf(south, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 <= 1; ego(g); good_shelf(west, V1)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 2; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 <= 3; ego(n); agent(west, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 <= 2; V1 >= 3; goal(east, V2); goal(east, V1); ego(n).",
+                    "right :- V2 <= 1; V1 <= 1; goal(north, V2); goal(west, V1); ego(g).",
+                    "right :- V2 <= 2; V1 <= 3; goal(south, V2); goal(north, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 >= 0; V1 <= 1; ego(b); good_shelf(east, V2); good_shelf(north, V1).",
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "7001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 <= 2; ego(g); agent(north, V1).",
+                    "forward :- V1 >= 1; goal(east, V1); ego(b).",
+                    "forward :- V1 <= 3; ego(b); good_shelf(west, V1)."
+                ],
+                "left": [
+                    "left :- V1 <= 2; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V2 >= 2; V1 <= 3; ego(g); agent(east, V1); good_shelf(south, V2).",
+                    "right :- V1 <= 1; ego(g); good_shelf(north, V1)."
+                ],
+                "load": [
+                    "load :- V1 <= 3; ego(n); agent(west, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 <= 1; goal(east, V1); ego(g).",
+                    "forward :- V1 >= 3; ego(g); good_shelf(west, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 0; ego(n); good_shelf(south, V1).",
+                    "left :- V1 >= 3; ego(n); good_shelf(east, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 2; ego(g); good_shelf(north, V1)."
+                ],
+                "load": [
+                    "load :- V2 >= 0; V1 <= 1; ego(b); good_shelf(east, V2); good_shelf(north, V1).",
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(east, V1)."
+                ]
+            }
+        },
+        "20001000": {
+            "0": {
+                "forward": [
+                    "forward :- V1 >= 3; ego(b); good_shelf(south, V1).",
+                    "forward :- V1 <= 3; ego(n); good_shelf(north, V1).",
+                    "forward :- V1 >= 0; ego(n); agent(north, V1)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; ego(g); agent(west, V1).",
+                    "left :- V2 <= 3; V1 <= 3; ego(n); good_shelf(south, V2); good_shelf(west, V1).",
+                    "left :- V1 <= 1; goal(south, V1); ego(g)."
+                ],
+                "right": [
+                    "right :- V2 >= 2; V1 <= 3; ego(g); agent(east, V1); good_shelf(south, V2)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 1; ego(n); good_shelf(south, V2); good_shelf(east, V1).",
+                    "load :- V2 <= 1; V1 <= 1; ego(b); agent(east, V2); good_shelf(north, V1)."
+                ]
+            },
+            "1": {
+                "forward": [
+                    "forward :- V1 >= 0; ego(b); good_shelf(north, V1).",
+                    "forward :- V1 <= 3; goal(east, V1); ego(b)."
+                ],
+                "left": [
+                    "left :- V1 >= 3; ego(n); good_shelf(east, V1).",
+                    "left :- V2 >= 2; V1 <= 2; ego(b); good_shelf(south, V2); good_shelf(west, V1).",
+                    "left :- V1 <= 3; ego(n); good_shelf(south, V1)."
+                ],
+                "right": [
+                    "right :- V1 >= 1; goal(east, V1); ego(g)."
+                ],
+                "load": [
+                    "load :- V2 <= 0; V1 <= 0; ego(n); good_shelf(east, V2); good_shelf(south, V1).",
+                    "load :- V2 <= 1; V1 <= 1; ego(b); good_shelf(south, V2); good_shelf(west, V1).",
+                    "load :- V1 >= 3; ego(b); agent(east, V1)."
+                ]
+            }
+        }
+    }
+}

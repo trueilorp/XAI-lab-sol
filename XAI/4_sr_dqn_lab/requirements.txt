@@ -2,3 +2,4 @@ gymnasium
 stable-baselines3 
 matplotlib 
 minigrid
+numpy
