@@ -1,11 +1,10 @@
 XAI/.vscode
-XAI/1_causal_lab/.vscode
-XAI/1_causal_lab/causalai
+XAI/1_2_causal_lab/.vscode
+XAI/1_2_causal_lab/causal-venv
 
 .venv
 models
 *venv
-XAI/stl_rl/stl_rl
 
 __pycache__
 
@@ -14,3 +13,10 @@ XAI/3_2_activation_rate_lab/src/envs
 XAI/3_2_activation_rate_lab/src/learners
 XAI/3_2_activation_rate_lab/src/config
 XAI/3_2_activation_rate_lab/results
+
+XAI/7_nesy_distributional/xai-project-minigrid
+XAI/8_stl_rl/stl-rl-venv
+
+
+XAI/5_activation_rate_lab/results
+XAI/5_activation_rate_lab/src/config
