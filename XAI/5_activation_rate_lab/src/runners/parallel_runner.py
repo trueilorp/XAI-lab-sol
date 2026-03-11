@@ -529,135 +529,97 @@ def _does_rule_activate(atoms, rule):
 	Returns:
 		bool: True if the rule activates (i.e., all atoms in the body of the rule are true given the atoms in the atoms set)
 	"""
-	# This function checks whether one rule body is satisfied by the current observation atoms.
-	# A rule can contain:
-	# 1) grounded atoms         -> e.g. ego(n)
-	# 2) predicate patterns     -> e.g. goal(south, V1)
-	# 3) numeric constraints    -> e.g. V1 <= 2
-	# The rule activates only if all 3 kinds are satisfied.
-	
-	def _parse_atom(atom_str):
-		# Convert a predicate string into (name, args).
-		# Example: "goal(south, V1)" -> ("goal", ["south", "V1"]) 
-		name = atom_str.split("(")[0].strip()
-		args_str = atom_str.split("(", 1)[1].rstrip(")")
-		args = [a.strip() for a in args_str.split(",")]
-		return name, args
+	# Example:
+	# Atoms: {'goal(east, 1)', 'ego(n)', 'goal(east, 0)', 'goal(north, 3)'}
+	# Rule: {'goal(south, V1)', 'V1 <= 2', 'ego(n)'}
 
-	def _compare(left, op, right):
-		# Small helper to evaluate one numeric relation.
-		if op == "<=":
-			return left <= right
-		if op == ">=":
-			return left >= right
-		if op == "<":
-			return left < right
-		if op == ">":
-			return left > right
-		if op == "=":
-			return left == right
-		return False
-
-	# Split rule literals in 3 groups:
-	# - grounded literals (e.g., ego(n))
-	# - predicate patterns with variables (e.g., goal(south, V1))
-	# - numeric constraints (e.g., V1 <= 2)
-	# We split first because each group is checked differently.
-	grounded = set()
-	patterns = []
+	# Separate rule elements
+	# simple atoms is stuff like "ego(n)"
+	simple_atoms = set()
+	# predicates with variables is stuff like "goal(south, V1)"
+	predicates_with_vars = []
+	# constraints are expressions like "V1 <= 5"
 	constraints = []
-
-	for lit in rule:
-		lit = lit.strip()
-		# Pattern with variable: predicate syntax + one known variable token.
-		if "(" in lit and ")" in lit and any(v in lit for v in ["V0", "V1", "V2", "V3", "V4", "V5", "V6", "V7"]):
-			patterns.append(lit)
-		# Pure numeric relation over a variable, e.g. V1 >= 2.
-		elif any(op in lit for op in ["<=", ">=", "<", ">", "="]):
-			constraints.append(lit)
-		# Everything else is considered a grounded atom.
+	
+	for element in rule:
+		if any(op in element for op in ['<=', '>=', '<', '>', '=']):
+			constraints.append(element.strip())
+		elif 'V' in element and '(' in element:
+			predicates_with_vars.append(element.strip())
 		else:
-			grounded.add(lit)
-
-	# All grounded literals must be directly present in the observation atoms.
-	if not grounded.issubset(atoms):
+			simple_atoms.add(element.strip())
+	
+	# Check simple atoms first
+	if not simple_atoms.issubset(atoms):
 		return False
-
-	# bindings stores variable assignments discovered while matching patterns.
-	# Example: if goal(south, V1) matches goal(south, 1), then bindings["V1"] = "1".
-	bindings = {}
-
-	# Match each pattern against one observed atom and bind variables.
-	for pat in patterns:
-		p_name, p_args = _parse_atom(pat)
-		# We need at least one atom in the observation that satisfies this pattern.
-		matched = False
-
+	
+	# Match predicates with variables
+	variable_bindings = {}
+	
+	for predicate in predicates_with_vars:
+		# Parse: "goal(south, V1)" -> "goal", ["south", "V1"]
+		pred_name = predicate.split('(')[0] # "goal"
+		pred_args_str = predicate.split('(')[1].rstrip(')')
+		pred_args = [arg.strip() for arg in pred_args_str.split(',')] # ["south", "V1"]
+		
+		found_match = False
 		for atom in atoms:
-			# Skip non-predicate strings defensively.
-			if "(" not in atom or ")" not in atom:
+			# we only care about atoms that are predicates
+			if '(' not in atom:
 				continue
-
-			a_name, a_args = _parse_atom(atom)
-			# Predicate symbol and arity must match before we compare arguments.
-			if a_name != p_name or len(a_args) != len(p_args):
+				
+			atom_name = atom.split('(')[0]
+			atom_args_str = atom.split('(')[1].rstrip(')')
+			atom_args = [arg.strip() for arg in atom_args_str.split(',')]
+			
+			# Check if names and arg counts match
+			if pred_name != atom_name or len(pred_args) != len(atom_args):
 				continue
-
-			# local stores tentative bindings for this candidate atom only.
-			# We commit them only if all arguments match.
-			local = {}
-			ok = True
-			for p_arg, a_arg in zip(p_args, a_args):
-				if p_arg.startswith("V"):
-					# Keep variable assignments consistent across literals.
-					# If V1 was already bound to "2", it cannot match "3" later.
-					if p_arg in bindings and bindings[p_arg] != a_arg:
-						ok = False
-						break
-					if p_arg not in bindings:
-						local[p_arg] = a_arg
+			
+			# Try to bind variables
+			temp_bindings = {}
+			all_match = True
+			
+			# check if each argument matches, considering variables 
+			# ex: "goal(south, V1)" matches "goal(south, 3)" with binding V1=3
+			for pred_arg, atom_arg in zip(pred_args, atom_args):
+				if pred_arg.startswith('V'):
+					# Variable
+					if pred_arg in variable_bindings:
+						if variable_bindings[pred_arg] != atom_arg:
+							all_match = False
+							break
+					else:
+						temp_bindings[pred_arg] = atom_arg
 				else:
-					# Constant positions must match exactly.
-					if p_arg != a_arg:
-						ok = False
+					# Constant  must match exactly
+					if pred_arg != atom_arg:
+						all_match = False
 						break
-
-			if ok:
-				# Candidate atom satisfied this pattern: keep the new bindings.
-				bindings.update(local)
-				matched = True
+			
+			if all_match:
+				variable_bindings.update(temp_bindings)
+				found_match = True
 				break
-
-		# If this pattern cannot be grounded by any atom, rule fails.
-		if not matched:
+		
+		if not found_match:
 			return False
-
-	# Evaluate numeric constraints after variable binding.
-	# We can only check constraints now because they depend on bound values.
-	for c in constraints:
-		op = None
-		for candidate in ["<=", ">=", "<", ">", "="]:
-			if candidate in c:
-				op = candidate
-				break
-		if op is None:
-			return False
-
-		left_str, right_str = [x.strip() for x in c.split(op, 1)]
-		# Left side must be a previously bound variable (e.g., V1).
-		if left_str not in bindings:
-			return False
-
+	
+	# Evaluate constraints
+	# so, if we have a constraint like "V1 <= 5" and we have a binding V1=3, we check if "3 <= 5" is true
+	for constraint in constraints:
 		try:
-			# Constraints are numeric, so convert both sides to float.
-			left = float(bindings[left_str])
-			right = float(right_str)
-		except ValueError:
-			# Non-numeric values cannot satisfy numeric constraints.
+			eval_str = constraint
+			for var, value in variable_bindings.items():
+				try:
+					numeric_value = float(value)
+					eval_str = eval_str.replace(var, str(numeric_value))
+				except ValueError:
+					return False  # Can't evaluate constraint with non-numeric value
+			
+			if not eval(eval_str):
+				return False
+		except:
 			return False
-
-		if not _compare(left, op, right):
-			return False
-
-	# All checks passed: grounded atoms present, patterns matched, constraints true.
+	
 	return True

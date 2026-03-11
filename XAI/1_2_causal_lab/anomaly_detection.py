@@ -146,6 +146,9 @@ def fit_normal_coeffs(normal_data: np.ndarray, causal_matrix: np.ndarray):
 		------------------------------------------------
 		offline coefficients: learned on full normal dataset
 	"""
+	
+	# NORMAL_DATA: without time 
+	
 	# `indices` stores triplets [parent_idx, child_idx, delay_tau] for all active links.
 	indices = np.array(np.where(causal_matrix != 0))
 	fine_coeffs = {}
@@ -163,12 +166,14 @@ def fit_normal_coeffs(normal_data: np.ndarray, causal_matrix: np.ndarray):
 		var_indices.sort(key=lambda x: x[2])  # Sort by delay
 		max_delay = var_indices[-1][2]
 		
-		# Build the regression design matrix using lagged parent signals.
+		# Build the regression design matrix using lagged parent signals
+		# el[0] --> parent
+		# max_delay - el[2]: max_time - el[2] --> slice respect to the element that i am focusing on
 		stack = [normal_data[max_delay - el[2]: max_time - el[2], el[0]]
 		         for el in var_indices]
 		stack.append(np.ones(max_time - max_delay))  # Add intercept column.
 		
-		# Solve least squares and store only parent coefficients (drop intercept).
+		# Solve least squares and store only parent coefficients
 		# Coefficients quantify the parent-child relationship
 		coeffs = np.linalg.lstsq(np.column_stack(stack),
 		                         normal_data[max_delay: max_time, var],

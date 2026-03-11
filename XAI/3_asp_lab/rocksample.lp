@@ -48,7 +48,7 @@ sampled(R,t+1) :- sampled(R,t).
 % avoid re-sampling
 :- sample(R,t), sampled(R,t).
 
-% avoid oscillations, so I I was at south, do not come back at south
+% avoid oscillations, so if I was at south, do not come back at south
 :- north(t), south(t-1).
 :- south(t), north(t-1).
 :- east(t), west(t-1).

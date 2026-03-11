@@ -1,0 +1,11 @@
+index,seed,env_theory,env_test,steps,agent,action,activation_rate
+0,0,rware-img-3-tiny-2ag-v2,rware-img-3-tiny-2ag-v2,1001000,0,noop,0.0
+1,0,rware-img-3-tiny-2ag-v2,rware-img-3-tiny-2ag-v2,1001000,0,forward,0.03896103896103896
+2,0,rware-img-3-tiny-2ag-v2,rware-img-3-tiny-2ag-v2,1001000,0,left,0.08620689655172414
+3,0,rware-img-3-tiny-2ag-v2,rware-img-3-tiny-2ag-v2,1001000,0,right,0.09923664122137404
+4,0,rware-img-3-tiny-2ag-v2,rware-img-3-tiny-2ag-v2,1001000,0,load,0.0
+0,0,rware-img-3-tiny-2ag-v2,rware-img-3-tiny-2ag-v2,1001000,1,noop,0.0
+1,0,rware-img-3-tiny-2ag-v2,rware-img-3-tiny-2ag-v2,1001000,1,forward,0.0
+2,0,rware-img-3-tiny-2ag-v2,rware-img-3-tiny-2ag-v2,1001000,1,left,0.04603580562659847
+3,0,rware-img-3-tiny-2ag-v2,rware-img-3-tiny-2ag-v2,1001000,1,right,0.09929078014184398
+4,0,rware-img-3-tiny-2ag-v2,rware-img-3-tiny-2ag-v2,1001000,1,load,0.01020408163265306

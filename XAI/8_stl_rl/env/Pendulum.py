@@ -163,7 +163,7 @@ class Pendulum(gym.Env):
 		# apply tanh to the robustness to compute the smoother costs
 		# critic cost
 		# beta: scaling factor for the cost, higher beta means sharper transition between low and high cost
-		# tanh: make function gradient
+		# tanh: make function diff
 		# costs: how much penalize the agent for violating the constraints
 		cost_thetadot = np.tanh(self.beta * rho_thetadot)
 		cost_torque = np.tanh(self.beta * rho_torque)

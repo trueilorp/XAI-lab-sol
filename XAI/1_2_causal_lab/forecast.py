@@ -120,7 +120,6 @@ def fit_causal_model(df, target_col=TARGET, tau_max=MAX_TAU):
 	# - ParCorr(): Partial correlation test for causal discovery
 	# - LinearRegression(): Linear model for predictions
 	# - StandardScaler(): Normalize the data
-	# - 80% train / 10% test split
 	model = Prediction(dataframe=df_tg,
 		cond_ind_test=ParCorr(),
 		prediction_model = LinearRegression(),
